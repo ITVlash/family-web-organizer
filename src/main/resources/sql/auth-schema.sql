@@ -1,5 +1,11 @@
 -- БД для аутентификации
-CREATE DATABASE IF NOT EXISTS family_organizer_auth;
+DO $$
+BEGIN
+  IF NOT EXISTS (SELECT FROM pg_database WHERE datname = 'family_organizer_auth') THEN
+    CREATE DATABASE family_organizer_auth;
+  END IF;
+END
+$$;
 
 \c family_organizer_auth
 

@@ -1,0 +1,17 @@
+spring:
+  datasource:
+    main:
+      url: jdbc:postgresql://main-db:5432/family_organizer_main
+      username: postgres
+      password: postgres
+      driver-class-name: org.postgresql.Driver
+    auth:
+      url: jdbc:postgresql://auth-db:5432/family_organizer_auth
+      username: postgres
+      password: postgres
+      driver-class-name: org.postgresql.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    show-sql: true

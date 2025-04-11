@@ -1,5 +1,11 @@
 -- Основная база данных
-CREATE DATABASE IF NOT EXISTS family_organizer_main;
+DO $$
+BEGIN
+  IF NOT EXISTS (SELECT FROM pg_database WHERE datname = 'family_organizer_main') THEN
+    CREATE DATABASE family_organizer_main;
+  END IF;
+END
+$$;
 
 \c family_organizer_main
 
